@@ -9,9 +9,10 @@ public class VirtualPetApp {
 		System.out.println("Welcome to Virtual Petworld 2.0");
 		System.out.print("Please name your pet: ");
 		uberPet.petName = input.next();
+		uberPet.petName = uberPet.petName.substring(0, 1).toUpperCase() + uberPet.petName.substring(1).toLowerCase();
 
 		String userChoice;
-		while (uberPet.PetIsNotDed() == true) {
+		while (uberPet.petIsNotDed() == true) {
 			do {
 				System.out.println(uberPet.statusPet());
 				System.out.println(VirtualPet.menuPet());
@@ -21,13 +22,13 @@ public class VirtualPetApp {
 
 			switch (userChoice) {
 			case "1":
-				System.out.println("\nYou feed " + uberPet.petName + " some food.");
+				System.out.println("You feed " + uberPet.petName + " some food.");
 				uberPet.feed();
 				uberPet.tick();
 				System.out.println("Your pets Hunger is at: " + uberPet.hunger);
 				break;
 			case "2":
-				System.out.println("\nYou give " + uberPet.petName + " some water.");
+				System.out.println("You give " + uberPet.petName + " some water.");
 				uberPet.water();
 				uberPet.tick();
 				System.out.println("Your pets Thirst is at: " + uberPet.thirst);
@@ -36,16 +37,27 @@ public class VirtualPetApp {
 				System.out.println("You lay " + uberPet.petName + " to rest for a bit.");
 				uberPet.rest();
 				uberPet.tick();
-				System.out.println("\nYour pets tiredness is " + uberPet.tiredness);
+				System.out.println("Your pets tiredness is " + uberPet.tiredness);
 				break;
 			case "4":
 				System.out.println("You play fetch with " + uberPet.petName + ".");
-				uberPet.boredom();
+				uberPet.training();
 				uberPet.tick();
-				System.out.println("\nYour pets boredom is: " + uberPet.boredom);
+				System.out.println("Your pets boredom is: " + uberPet.training);
 				break;
+			case "5":
+				System.out.println(uberPet.petName + " trudges around a bit, bored.");
 			}
 
+		}
+		while (!uberPet.petIsNotDed() == true) {
+			if (uberPet.hunger <= 0) {
+				System.out.println(uberPet.petName + " had died of starvation...FeelsBadMan");
+				break;
+			} else {
+				System.out.println(uberPet.petName + " has died of dehydration... FeelsBadMan");
+				break;
+			}
 		}
 		input.close();
 	}

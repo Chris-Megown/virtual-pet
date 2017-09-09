@@ -10,7 +10,7 @@ public class VirtualPet {
 	int training = 1;
 
 	public static String menuPet() {
-		return "\nWhat would you like to do?\nPress 1 to Feed your pet.\nPress 2 to Water your pet.\nPress 3 to let your pet Rest.\nPress 4 to Play with you pet.\nPress 5 to do nothing...lame.\nPlease respond: ";
+		return "\nWhat would you like to do?\nPress 1 to Feed your pet.\nPress 2 to Water your pet.\nPress 3 to let your pet Rest.\nPress 4 to Play with you pet.\nPress 5 to do nothing...lame.\nPress 6 to check your pets stats.\nPlease respond: ";
 	}
 
 	public String statusPet() {

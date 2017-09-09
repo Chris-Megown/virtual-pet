@@ -1,6 +1,8 @@
+import java.util.Random;
 
 public class VirtualPet {
 
+	Random random = new Random();
 	String petName;
 	int hunger = 50;
 	int thirst = 50;
@@ -16,11 +18,24 @@ public class VirtualPet {
 				+ "\nTiredness: " + tiredness + "\nEXP: " + training;
 	}
 
+	public String notGood() {
+		return "\n" + petName + " dies of Dysentery...FeelsBadMan.";
+	}
+
 	boolean petIsNotDed() {
 		if (hunger > 0 && thirst > 0) {
 			return true;
 		}
 		return false;
+	}
+
+	boolean letsPlayAGame() {
+		int rando = random.nextInt(50) + 1;
+		if (rando == 25) {
+			return false;
+		} else {
+			return true;
+		}
 	}
 
 	void feed() {
@@ -49,8 +64,8 @@ public class VirtualPet {
 	}
 
 	void tick() {
-		hunger -= 5;
-		thirst -= 5;
+		hunger -= 2;
+		thirst -= 2;
 		tiredness -= 1;
 	}
 }

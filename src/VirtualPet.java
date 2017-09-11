@@ -18,8 +18,36 @@ public class VirtualPet {
 				+ "\nTiredness: " + tiredness + "\nEXP: " + training;
 	}
 
+	public String choiceOne() {
+		return "You feed " + petName + " some food.\n";
+	}
+
+	public String choiceTwo() {
+		return "You give " + petName + " some water.\n";
+	}
+
+	public String choiceThree() {
+		return "You lay " + petName + " to rest for a bit.\n";
+	}
+
+	public String choiceFour() {
+		return "You train with " + petName + ".\n";
+	}
+
+	public String choiceFive() {
+		return petName + " trudges around a bit, bored.";
+	}
+
 	public String notGood() {
+		return petName + " has died of starvation...FeelsBadMan";
+	}
+
+	public String petStarve() {
 		return "\n" + petName + " dies of Dysentery...FeelsBadMan.";
+	}
+
+	public String petDehydrate() {
+		return petName + " has died of dehydration... FeelsBadMan";
 	}
 
 	boolean petIsNotDed() {

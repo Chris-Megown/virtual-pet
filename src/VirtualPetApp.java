@@ -22,31 +22,31 @@ public class VirtualPetApp {
 
 			switch (userChoice) {
 			case "1":
-				System.out.println("You feed " + uberPet.petName + " some food.\n");
+				System.out.println(uberPet.choiceOne());
 				uberPet.feed();
 				uberPet.tick();
 				System.out.println("Your pets Hunger is at: " + uberPet.hunger);
 				break;
 			case "2":
-				System.out.println("You give " + uberPet.petName + " some water.\n");
+				System.out.println(uberPet.choiceTwo());
 				uberPet.water();
 				uberPet.tick();
 				System.out.println("Your pets Thirst is at: " + uberPet.thirst);
 				break;
 			case "3":
-				System.out.println("You lay " + uberPet.petName + " to rest for a bit.\n");
+				System.out.println(uberPet.choiceThree());
 				uberPet.rest();
 				uberPet.tick();
 				System.out.println("Your pets tiredness is " + uberPet.tiredness);
 				break;
 			case "4":
-				System.out.println("You train with " + uberPet.petName + ".\n");
+				System.out.println(uberPet.choiceFour());
 				uberPet.training();
 				uberPet.tick();
 				System.out.println("Your pets Experience is: " + uberPet.training);
 				break;
 			case "5":
-				System.out.println(uberPet.petName + " trudges around a bit, bored.");
+				System.out.println(uberPet.choiceFive());
 				uberPet.tick();
 				uberPet.letsPlayAGame();
 				if (!uberPet.letsPlayAGame() == true) {
@@ -62,10 +62,10 @@ public class VirtualPetApp {
 		}
 		while (!uberPet.petIsNotDed() == true) {
 			if (uberPet.hunger <= 0) {
-				System.out.println(uberPet.petName + " had died of starvation...FeelsBadMan");
+				System.out.println(uberPet.petStarve());
 				break;
 			} else {
-				System.out.println(uberPet.petName + " has died of dehydration... FeelsBadMan");
+				System.out.println(uberPet.petDehydrate());
 				break;
 			}
 		}

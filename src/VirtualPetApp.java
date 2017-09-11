@@ -6,10 +6,10 @@ public class VirtualPetApp {
 
 		Scanner input = new Scanner(System.in);
 		VirtualPet uberPet = new VirtualPet();
-		System.out.println("Welcome to Virtual Petworld 2.0");
-		System.out.print("Please name your pet: ");
+		System.out.println(uberPet.intro());
 		uberPet.petName = input.next();
 		uberPet.petName = uberPet.petName.substring(0, 1).toUpperCase() + uberPet.petName.substring(1).toLowerCase();
+		System.out.println(uberPet.directions());
 		System.out.println(uberPet.statusPet());
 
 		String userChoice;
@@ -25,25 +25,25 @@ public class VirtualPetApp {
 				System.out.println(uberPet.choiceOne());
 				uberPet.feed();
 				uberPet.tick();
-				System.out.println("Your pets Hunger is at: " + uberPet.hunger);
+				System.out.println(uberPet.choiceOneUpdate());
 				break;
 			case "2":
 				System.out.println(uberPet.choiceTwo());
 				uberPet.water();
 				uberPet.tick();
-				System.out.println("Your pets Thirst is at: " + uberPet.thirst);
+				System.out.println(uberPet.choiceTwoUpdate());
 				break;
 			case "3":
 				System.out.println(uberPet.choiceThree());
 				uberPet.rest();
 				uberPet.tick();
-				System.out.println("Your pets tiredness is " + uberPet.tiredness);
+				System.out.println(uberPet.choiceThreeUpdate());
 				break;
 			case "4":
 				System.out.println(uberPet.choiceFour());
-				uberPet.training();
+				uberPet.fetch();
 				uberPet.tick();
-				System.out.println("Your pets Experience is: " + uberPet.training);
+				System.out.println(uberPet.choiceFourUpdate());
 				break;
 			case "5":
 				System.out.println(uberPet.choiceFive());
